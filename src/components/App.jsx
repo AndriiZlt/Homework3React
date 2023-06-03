@@ -1,5 +1,5 @@
 import React from 'react';
-import shortid from 'shortid';
+import { nanoid } from 'nanoid';
 import ContactForm from './ContactForm/ContactForm';
 import Filter from './Filter/Filter';
 import ContactList from './Contacts/Contacts';
@@ -39,7 +39,7 @@ class App extends React.Component {
     }
 
     if (!isTaken) {
-      const contactId = shortid.generate();
+      const contactId = nanoid();
       const newContact = {
         id: contactId,
         name: name.value,

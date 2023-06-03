@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import shortid from 'shortid';
+import { nanoid } from 'nanoid';
 import { Ul, Li, Btn } from './Contacts.styled';
 
 class ContactList extends React.Component {
@@ -14,7 +14,7 @@ class ContactList extends React.Component {
           <Ul>
             {filteredContacts.length > 0
               ? filteredContacts.map(({ name, number }) => (
-                  <Li key={shortid.generate()}>
+                  <Li key={nanoid()}>
                     {name} {number}
                     {
                       <Btn
