@@ -8,11 +8,14 @@ class ContactList extends React.Component {
     const filteredContacts = this.props.contacts.filter(contact =>
       contact.name.toLowerCase().includes(this.props.filter.toLowerCase())
     );
+
+    console.log(filteredContacts);
+
     return (
       this.props.contacts.length > 0 && (
         <>
           <Ul>
-            {filteredContacts.length > 0
+            {filteredContacts
               ? filteredContacts.map(({ name, number }) => (
                   <Li key={nanoid()}>
                     {name} {number}
